@@ -5,7 +5,7 @@ terraform {
     organization = "mikesupertrampster-corp"
 
     workspaces {
-      name = "terraform-aws-inbox-dev"
+      name = "terraform-aws-inbox-root"
     }
   }
 }
