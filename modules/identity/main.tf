@@ -48,3 +48,8 @@ resource "aws_route53_record" "spf" {
   ttl     = 300
   records = ["v=spf1 include:amazonses.com ~all"]
 }
+
+resource "aws_ses_receipt_rule_set" "rule_set" {
+  for_each      = toset(var.rule_set_names)
+  rule_set_name = each.value
+}

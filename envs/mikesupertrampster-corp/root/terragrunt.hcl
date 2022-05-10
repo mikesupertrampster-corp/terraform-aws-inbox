@@ -4,7 +4,8 @@ include {
 
 
 inputs = {
-  apex_domain    = "mikesupertrampster.com"
-  environment    = "root"
-  tags           = { Environment = "root", Managed_By = "Terraform" }
+  apex_domain       = "mikesupertrampster.com"
+  environment       = "root"
+  forwarding_emails = ["mikesupertrampster@gmail.com"]
+  tags              = { Environment = "root", Managed_By = "Terraform" }
 }
