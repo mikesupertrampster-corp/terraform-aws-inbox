@@ -1,0 +1,23 @@
+variable "account_id" {
+  type = string
+}
+
+variable "apex_domain" {
+  type = string
+}
+
+variable "bootstrap_role" {
+  type = string
+}
+
+variable "environment" {
+  type = string
+}
+
+variable "region" {
+  type = string
+}
+
+variable "tags" {
+  type = map(string)
+}
