@@ -33,6 +33,14 @@ resource "aws_route53_record" "dkim" {
   records = ["${element(aws_ses_domain_dkim.dkim.dkim_tokens, count.index)}.dkim.amazonses.com"]
 }
 
+resource "aws_route53_record" "mx" {
+  zone_id = data.aws_route53_zone.apex.zone_id
+  name    = aws_ses_domain_identity.identity.domain
+  type    = "MX"
+  ttl     = 600
+  records = ["10 inbound-smtp.${data.aws_region.current.name}.amazonses.com"]
+}
+
 resource "aws_route53_record" "bounce" {
   zone_id = data.aws_route53_zone.apex.zone_id
   name    = aws_ses_domain_mail_from.from.mail_from_domain
