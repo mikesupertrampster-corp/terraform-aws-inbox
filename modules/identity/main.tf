@@ -37,4 +37,10 @@ resource "aws_ses_receipt_rule" "inbound" {
     position    = 1
     bucket_name = aws_s3_bucket.inbox.id
   }
+
+  sns_action {
+    encoding  = "UTF-8"
+    position  = 2
+    topic_arn = aws_sns_topic.inbox.arn
+  }
 }

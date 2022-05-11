@@ -7,6 +7,7 @@ provider "aws" {
 }
 
 module "identity" {
-  source = "../../../modules//identity"
-  domain = var.apex_domain
+  source            = "../../../modules//identity"
+  domain            = var.apex_domain
+  forwarding_emails = var.forwarding_emails
 }
